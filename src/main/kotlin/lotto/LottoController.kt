@@ -13,6 +13,4 @@ class LottoController(private val customer : Customer) {
             ?: throw IllegalArgumentException(Message.ERROR_INPUT_STRING_OR_BLANK.messageText)
         customer.setPay(payment)
     }
-
-
 }

@@ -5,7 +5,7 @@ class Customer(private var pay : Int = NO_REMAINDER) {
     private val validate = Validate()
 
     fun setPay(payment: Int){
-       //validate.validatePay(payment)
+       validate.validatePay(payment)
             this.pay = payment
     }
 
