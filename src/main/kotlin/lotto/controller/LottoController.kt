@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Console
 import lotto.model.Customer
 import lotto.model.Lotto
 import lotto.model.Store
+import lotto.model.Winning
 import lotto.utils.Constants.LOTTO_PURCHASE_UNIT
 import lotto.utils.Validate.validatePay
 import lotto.view.InputView.printPayInputMessage
@@ -14,6 +15,7 @@ import lotto.view.OutPutView.printProduceLottoResult
 class LottoController {
     private val customer: Customer = Customer()
     private val store: Store = Store()
+    private val winning: Winning = Winning()
 
     fun run() {
         customerPayInput()
@@ -42,7 +44,7 @@ class LottoController {
 
     private fun winningNumberInput(){
         printWinningNumberInputMessage()
-        val winningNumber = Console.readLine()
-
+        val newWinningNumber = Console.readLine()
+        winning.setWinningNumber(newWinningNumber.split(",").map { it.trim().toInt() })
     }
 }
