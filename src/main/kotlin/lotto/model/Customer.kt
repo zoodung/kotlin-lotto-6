@@ -6,7 +6,6 @@ import lotto.utils.Validate.validatePay
 
 class Customer(private var pay : Int = INITIALIZE_NUMBER, private var lottoCollection : MutableList<Lotto> = mutableListOf()) {
     fun setPay(payment: Int) {
-        validatePay(payment)
         this.pay = payment
     }
 
@@ -18,7 +17,7 @@ class Customer(private var pay : Int = INITIALIZE_NUMBER, private var lottoColle
         return pay
     }
 
-    fun getlottoCollection(): List<Lotto> {
+    fun getLottoCollection(): List<Lotto> {
         return lottoCollection
     }
 }
