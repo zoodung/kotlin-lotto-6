@@ -1,8 +1,10 @@
 package lotto
 
+import lotto.controller.LottoController
+import lotto.model.Customer
+
 fun main() {
-    val customer = Customer()
-    val controller = LottoController(customer)
+    val controller = LottoController()
 
     controller.run()
 }
