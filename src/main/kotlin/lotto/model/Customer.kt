@@ -10,12 +10,16 @@ class Customer(private var pay : Int = INITIALIZE_NUMBER, private var lottoColle
         this.pay = payment
     }
 
-    fun setLottoCollection(newLottoCollection: MutableList<Lotto>){
+    fun setLottoCollection(newLottoCollection: MutableList<Lotto>) {
         this.lottoCollection = newLottoCollection
     }
 
     fun getPay(): Int {
         return pay
+    }
+
+    fun getlottoCollection(): List<Lotto> {
+        return lottoCollection
     }
 }
 

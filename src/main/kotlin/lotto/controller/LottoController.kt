@@ -7,6 +7,7 @@ import lotto.model.Store
 import lotto.utils.Constants.ERROR_INPUT_STRING_OR_BLANK
 import lotto.utils.Constants.LOTTO_PURCHASE_UNIT
 import lotto.view.InputView.printPayInputMessage
+import lotto.view.OutPutView.printProduceLottoResult
 
 
 class LottoController {
@@ -16,6 +17,7 @@ class LottoController {
     fun run() {
         customerPay()
         produceLotto()
+        printLotto()
     }
 
     private fun customerPay() {
@@ -29,5 +31,10 @@ class LottoController {
         val piece = customer.getPay() / LOTTO_PURCHASE_UNIT
         val newLottoCollection: MutableList<Lotto> = store.produceLottoNumber(piece)
         customer.setLottoCollection(newLottoCollection)
+    }
+
+    private fun printLotto() {
+        val produceLottoResult = customer.getlottoCollection()
+        printProduceLottoResult(produceLottoResult)
     }
 }

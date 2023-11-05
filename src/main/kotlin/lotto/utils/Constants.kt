@@ -9,10 +9,14 @@ object Constants  {
     /* Validate */
     const val LOTTO_PURCHASE_UNIT = 1000
     const val INITIALIZE_NUMBER = 0
-    const val HUNDRED = 100
+    const val MAX_PURCHASE_PIECE = 100
 
     /* Input Message */
     const val REQUEST_PAY_INPUT_MESSAGE = "구입금액을 입력해 주세요."
+
+    /* Output Message */
+    const val ENTER = "\n"
+    const val PRINT_PRODUCE_LOTTO_RESULT_MESSAGE = "개를 구매했습니다."
 
     /* Error Message */
     private const val ERROR_TEXT = "[ERROR] "

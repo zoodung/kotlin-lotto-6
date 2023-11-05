@@ -13,4 +13,6 @@ class Lotto(private val numbers: List<Int>) {
         require(numbers.toSet().size == LOTTO_NUMBER_SIZE) { ERROR_LOTTO_DUPLICATE }
         require(numbers.all { it in MIN_LOTTO_NUMBER..MAX_LOTTO_NUMBER }) { ERROR_LOTTO_RANGE }
     }
+
+    override fun toString(): String = numbers.sorted().joinToString(prefix = "[", postfix = "]", separator = ", ")
 }

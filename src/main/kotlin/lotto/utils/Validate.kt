@@ -3,9 +3,9 @@ package lotto.utils
 import lotto.utils.Constants.ERROR_INPUT_MAXIMUM
 import lotto.utils.Constants.ERROR_INPUT_MINIMUM
 import lotto.utils.Constants.ERROR_INPUT_UNIT
-import lotto.utils.Constants.HUNDRED
 import lotto.utils.Constants.INITIALIZE_NUMBER
 import lotto.utils.Constants.LOTTO_PURCHASE_UNIT
+import lotto.utils.Constants.MAX_PURCHASE_PIECE
 
 object Validate {
     fun validatePay(payment: Int) {
@@ -23,6 +23,6 @@ object Validate {
     }
 
     private fun checkPaymentMaximum(payment: Int) {
-        require(payment <= (LOTTO_PURCHASE_UNIT*HUNDRED)) { ERROR_INPUT_MAXIMUM } // 주문 단위의 100배를 초과한 금액은 구매할 수 없다.
+        require(payment <= (LOTTO_PURCHASE_UNIT * MAX_PURCHASE_PIECE)) { ERROR_INPUT_MAXIMUM } // 주문 단위의 100배를 초과한 금액은 구매할 수 없다.
     }
 }
