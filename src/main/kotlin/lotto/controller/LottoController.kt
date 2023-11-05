@@ -7,6 +7,7 @@ import lotto.model.Store
 import lotto.model.Winning
 import lotto.utils.Constants.LOTTO_PURCHASE_UNIT
 import lotto.utils.Validate.validatePay
+import lotto.utils.Validate.validateWinningNumber
 import lotto.view.InputView.printPayInputMessage
 import lotto.view.InputView.printWinningNumberInputMessage
 import lotto.view.OutPutView.printProduceLottoResult
@@ -45,6 +46,7 @@ class LottoController {
     private fun winningNumberInput(){
         printWinningNumberInputMessage()
         val newWinningNumber = Console.readLine()
+        validateWinningNumber(newWinningNumber)
         winning.setWinningNumber(newWinningNumber.split(",").map { it.trim().toInt() })
     }
 }
