@@ -18,6 +18,7 @@ class LottoController {
         customerPay()
         produceLotto()
         printLotto()
+
     }
 
     private fun customerPay() {
