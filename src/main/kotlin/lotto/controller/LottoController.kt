@@ -43,9 +43,9 @@ class LottoController {
         while (true) {
             printPayInputMessage()
             try {
-                val payment = Console.readLine()
+                val payment = Console.readLine().toIntOrNull() ?: throw IllegalArgumentException(ERROR_INPUT_BLANK_OR_CHAR)
                 validatePay(payment)
-                customer.setPay(payment.toInt())
+                customer.setPay(payment)
                 break
             } catch (e: IllegalArgumentException) {
                 println(e.message)

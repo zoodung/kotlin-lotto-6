@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class CustomerTest {
-    /*@Test
+    @Test
     fun `로또 구매 금액이 1000원 미만이면 예외가 발생한다`() {
         assertThrows<IllegalArgumentException> {
             validatePay(500)
@@ -24,5 +24,5 @@ class CustomerTest {
         assertThrows<IllegalArgumentException> {
             validatePay(1500)
         }
-    }*/
+    }
 }
