@@ -79,10 +79,17 @@ class LottoController {
     }
 
     private fun inputBonusNumber() {
-        printBonusNumberInputMessage()
-        val newBonusNumber = Console.readLine().toIntOrNull() ?: throw IllegalArgumentException(ERROR_INPUT_BLANK_OR_CHAR)
-        validateBonusNumber(newBonusNumber, winning.getWinningNumbers())
-        winning.setBonusNumber(newBonusNumber)
+        while (true) {
+            printBonusNumberInputMessage()
+            try {
+                val newBonusNumber = Console.readLine().toIntOrNull() ?: throw IllegalArgumentException(ERROR_INPUT_BLANK_OR_CHAR)
+                validateBonusNumber(newBonusNumber, winning.getWinningNumbers())
+                winning.setBonusNumber(newBonusNumber)
+                break
+            } catch (e: IllegalArgumentException) {
+                println(e.message)
+            }
+        }
     }
 
     private fun rankLotto() {
