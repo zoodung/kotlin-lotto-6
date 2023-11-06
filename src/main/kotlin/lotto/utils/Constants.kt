@@ -20,10 +20,6 @@ object Constants  {
     const val FIRST_RANK = 1
     const val LAST_RANK = 5
 
-    /* Winning */
-    val INITIALIZE_WINNING_NUMBER = listOf(1, 2, 3, 4, 5, 6)
-    const val INITIALIZE_BONUS_NUMBER = 7
-
     /* Profit */
     const val FIFTH_PRIZE_MONEY = 5000
     const val FOURTH_PRIZE_MONEY = 50000
@@ -31,6 +27,7 @@ object Constants  {
     const val SECOND_PRIZE_MONEY = 30000000
     const val FIRST_PRIZE_MONEY = 2000000000
     const val INITIALIZE_DOUBLE = 0.0
+    const val HUNDRED_PERCENTAGE = 100
 
     /* Validate */
     const val LOTTO_PURCHASE_UNIT = 1000
@@ -63,6 +60,7 @@ object Constants  {
     const val ERROR_INPUT_SIZE = ERROR_TEXT + "번호가 6개가 아닙니다."
     const val ERROR_INPUT_DUPLICATE = ERROR_TEXT + "중복하는 숫자가 존재합니다."
     const val ERROR_INPUT_RANGE = ERROR_TEXT + "번호가 범위를 벗어났습니다."
+    const val ERROR_INPUT_BLANK_OR_CHAR = ERROR_TEXT + "문자와 공백은 입력할 수 없습니다."
     const val ERROR_INPUT_BLANK = ERROR_TEXT + "공백은 입력할 수 없습니다."
     const val ERROR_INPUT_CHAR = ERROR_TEXT + "문자는 입력할 수 없습니다."
     const val ERROR_PAY_INPUT_UNIT = ERROR_TEXT + "1000원 단위로 입력해 주세요."

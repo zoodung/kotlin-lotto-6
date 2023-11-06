@@ -7,6 +7,7 @@ import lotto.model.Profit
 import lotto.model.Rank
 import lotto.model.Store
 import lotto.model.Winning
+import lotto.utils.Constants.ERROR_INPUT_BLANK_OR_CHAR
 import lotto.utils.Constants.LOTTO_PURCHASE_UNIT
 import lotto.utils.Validate.validateBonusNumber
 import lotto.utils.Validate.validatePay
@@ -17,7 +18,6 @@ import lotto.view.InputView.printWinningNumberInputMessage
 import lotto.view.OutPutView.printLottoRankResult
 import lotto.view.OutPutView.printProduceLottoResult
 import lotto.view.OutPutView.printProfitResult
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.MethodDescriptor.getter
 
 
 class LottoController {
@@ -40,10 +40,17 @@ class LottoController {
     }
 
     private fun inputCustomerPay() {
-        printPayInputMessage()
-        val payment = Console.readLine()
-        validatePay(payment)
-        customer.setPay(payment.toInt())
+        while (true) {
+            printPayInputMessage()
+            try {
+                val payment = Console.readLine()
+                validatePay(payment)
+                customer.setPay(payment.toInt())
+                break
+            } catch (e: IllegalArgumentException) {
+                println(e.message)
+            }
+        }
     }
 
     private fun produceLotto() {
@@ -66,9 +73,9 @@ class LottoController {
 
     private fun inputBonusNumber() {
         printBonusNumberInputMessage()
-        val newBonusNumber = Console.readLine()
-        validateBonusNumber(newBonusNumber)
-        winning.setBonusNumber(newBonusNumber.toInt())
+        val newBonusNumber = Console.readLine().toIntOrNull() ?: throw IllegalArgumentException(ERROR_INPUT_BLANK_OR_CHAR)
+        validateBonusNumber(newBonusNumber, winning.getWinningNumbers())
+        winning.setBonusNumber(newBonusNumber)
     }
 
     private fun rankLotto() {

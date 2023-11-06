@@ -6,15 +6,8 @@ import lotto.utils.Constants.LOTTO_PURCHASE_UNIT
 
 
 class Customer(
-    private var pay: Int = LOTTO_PURCHASE_UNIT,
-    private var lottoCollection: MutableList<Lotto> = mutableListOf()
+    private var pay: Int = INITIALIZE_NUMBER, private var lottoCollection: MutableList<Lotto> = mutableListOf()
 ) {
-    init {
-        require(pay % LOTTO_PURCHASE_UNIT == INITIALIZE_NUMBER) { Constants.ERROR_PAY_INPUT_UNIT }
-        require(pay >= LOTTO_PURCHASE_UNIT) { Constants.ERROR_PAY_INPUT_MINIMUM }
-        require(pay <= (LOTTO_PURCHASE_UNIT * Constants.MAX_PURCHASE_PIECE)) { Constants.ERROR_PAY_INPUT_MAXIMUM }
-    }
-
     fun setPay(payment: Int) {
         this.pay = payment
     }

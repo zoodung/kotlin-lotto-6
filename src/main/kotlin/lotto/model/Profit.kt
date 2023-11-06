@@ -3,6 +3,7 @@ package lotto.model
 import lotto.utils.Constants.FIFTH_PRIZE_MONEY
 import lotto.utils.Constants.FIRST_PRIZE_MONEY
 import lotto.utils.Constants.FOURTH_PRIZE_MONEY
+import lotto.utils.Constants.HUNDRED_PERCENTAGE
 import lotto.utils.Constants.INITIALIZE_DOUBLE
 import lotto.utils.Constants.SECOND_PRIZE_MONEY
 import lotto.utils.Constants.THIRD_PRIZE_MONEY
@@ -17,7 +18,7 @@ class Profit(private var _profit: Double = INITIALIZE_DOUBLE) {
     fun calculateLottoProfit(rankCount: List<Int>, pay: Int) {
         val totalPrizeMoney = countProfit(rankCount)
 
-        setProfit((totalPrizeMoney.toDouble() / pay)*100)
+        setProfit((totalPrizeMoney.toDouble() / pay) * HUNDRED_PERCENTAGE)
     }
 
     private fun countProfit(rankCount: List<Int>): Int {
