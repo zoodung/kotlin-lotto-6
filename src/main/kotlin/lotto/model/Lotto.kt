@@ -14,5 +14,9 @@ class Lotto(private val numbers: List<Int>) {
         require(numbers.all { it in MIN_LOTTO_NUMBER..MAX_LOTTO_NUMBER }) { ERROR_INPUT_RANGE }
     }
 
+    fun getNumbers(): List<Int> {
+        return numbers.toList()
+    }
+
     override fun toString(): String = numbers.sorted().joinToString(prefix = "[", postfix = "]", separator = ", ")
 }

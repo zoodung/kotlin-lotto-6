@@ -19,17 +19,18 @@ object Validate {
     }
 
     /* 당첨 번호 입력 예외 처리 */
-    fun validateWinningNumber(newWinningNumbers: String) {
-        requireWinningNumbersNotBlank(newWinningNumbers)
-        requireWinningNumbersOnlyDigits(newWinningNumbers)
+    fun validateWinningNumber(newWinningNumber: String) {
+        val splitWinningNumbers = newWinningNumber.split(",").map { it.trim() }
+        requireWinningNumbersNotBlank(splitWinningNumbers)
+        requireWinningNumbersOnlyDigits(splitWinningNumbers)
     }
 
-    private fun requireWinningNumbersNotBlank(newWinningNumbers: String) {
-        require(newWinningNumbers.isNotBlank()) { ERROR_INPUT_BLANK }
+    private fun requireWinningNumbersNotBlank(splitWinningNumbers: List<String>) {
+        require(splitWinningNumbers.none { it.isBlank() }) { ERROR_INPUT_BLANK }
     }
 
-    private fun requireWinningNumbersOnlyDigits(newWinningNumbers: String) {
-        require(newWinningNumbers.toIntOrNull() != null) { ERROR_INPUT_CHAR }
+    private fun requireWinningNumbersOnlyDigits(splitWinningNumbers: List<String>) {
+        require(splitWinningNumbers.all { it.toIntOrNull() != null }) { ERROR_INPUT_CHAR }
     }
 
     /* 보너스 번호 입력 예외 처리 */

@@ -6,14 +6,27 @@ object Constants  {
     const val MAX_LOTTO_NUMBER = 45
     const val LOTTO_NUMBER_SIZE = 6
 
-    /* Validate */
-    const val LOTTO_PURCHASE_UNIT = 1000
-    const val INITIALIZE_NUMBER = 0
-    const val MAX_PURCHASE_PIECE = 100
+    /* Rank */
+    const val FIRST_PLACE = "1등"
+    const val SECOND_PLACE = "2등"
+    const val THIRD_PLACE = "3등"
+    const val FOURTH_PLACE = "4등"
+    const val FIFTH_PLACE = "5등"
+    const val LOSE_PLACE = "꽝"
+    const val MATCHED_SIX = 6
+    const val MATCHED_FIVE = 5
+    const val MATCHED_FOUR = 4
+    const val MATCHED_THREE = 3
+
 
     /* Winning */
     val INITIALIZE_WINNING_NUMBER = listOf(1, 2, 3, 4, 5, 6)
     const val INITIALIZE_BONUS_NUMBER = 7
+
+    /* Validate */
+    const val LOTTO_PURCHASE_UNIT = 1000
+    const val INITIALIZE_NUMBER = 0
+    const val MAX_PURCHASE_PIECE = 100
 
     /* Input Message */
     const val REQUEST_PAY_INPUT_MESSAGE = "구입금액을 입력해 주세요."

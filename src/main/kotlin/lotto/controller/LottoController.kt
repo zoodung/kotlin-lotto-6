@@ -3,6 +3,7 @@ package lotto.controller
 import camp.nextstep.edu.missionutils.Console
 import lotto.model.Customer
 import lotto.model.Lotto
+import lotto.model.Rank
 import lotto.model.Store
 import lotto.model.Winning
 import lotto.utils.Constants.LOTTO_PURCHASE_UNIT
@@ -19,6 +20,7 @@ class LottoController {
     private val customer: Customer = Customer()
     private val store: Store = Store()
     private val winning: Winning = Winning()
+    private val rank: Rank = Rank()
 
     fun run() {
         inputCustomerPay()
@@ -26,6 +28,7 @@ class LottoController {
         printLotto()
         inputWinningNumbers()
         inputBonusNumber()
+        ranksLotto()
     }
 
     private fun inputCustomerPay() {
@@ -46,17 +49,21 @@ class LottoController {
         printProduceLottoResult(produceLottoResult)
     }
 
-    private fun inputWinningNumbers(){
+    private fun inputWinningNumbers() {
         printWinningNumberInputMessage()
         val newWinningNumbers = Console.readLine()
         validateWinningNumber(newWinningNumbers)
         winning.setWinningNumbers(newWinningNumbers.split(",").map { it.trim().toInt() })
     }
 
-    private fun inputBonusNumber(){
+    private fun inputBonusNumber() {
         printBonusNumberInputMessage()
         val newBonusNumber = Console.readLine()
         validateBonusNumber(newBonusNumber)
         winning.setBonusNumber(newBonusNumber.toInt())
+    }
+
+    private fun ranksLotto() {
+        rank.analyzeLottoRanking(customer.getLottoCollection(), winning)
     }
 }

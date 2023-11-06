@@ -9,4 +9,8 @@ object OutPutView {
         println(PRINT_ENTER + "${produceLottoResult.size}" + PRINT_PRODUCE_LOTTO_RESULT_MESSAGE)
         produceLottoResult.forEach { lotto -> println(lotto) }
     }
+
+    fun printWinningStatistic(){
+
+    }
 }
