@@ -65,10 +65,17 @@ class LottoController {
     }
 
     private fun inputWinningNumbers() {
-        printWinningNumberInputMessage()
-        val newWinningNumbers = Console.readLine()
-        validateWinningNumber(newWinningNumbers)
-        winning.setWinningNumbers(newWinningNumbers.split(",").map { it.trim().toInt() })
+        while (true) {
+            printWinningNumberInputMessage()
+            try {
+                val newWinningNumbers = Console.readLine()
+                validateWinningNumber(newWinningNumbers)
+                winning.setWinningNumbers(newWinningNumbers.split(",").map { it.trim().toInt() })
+                break
+            } catch (e: IllegalArgumentException) {
+                println(e.message)
+            }
+        }
     }
 
     private fun inputBonusNumber() {

@@ -11,14 +11,13 @@ import lotto.utils.Constants.MIN_LOTTO_NUMBER
 
 object Validate {
     /* 구입 금액 입력 예외 처리 */
-    fun validatePay(payment: String): Boolean {
+    fun validatePay(payment: String) {
         requirePaymentNotBlank(payment)
         requirePaymentOnlyDigits(payment)
         val alteredPayment = payment.toInt()
         requirePaymentUnit(alteredPayment)
         requirePaymentMinimum(alteredPayment)
         requirePaymentMaximum(alteredPayment)
-        return true
     }
 
     private fun requirePaymentNotBlank(payment: String) {
