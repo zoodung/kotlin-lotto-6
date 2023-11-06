@@ -8,15 +8,18 @@ import lotto.utils.Constants.MIN_LOTTO_NUMBER
 class Store {
     fun produceLottoNumber(piece: Int): MutableList<Lotto> {
         val newLottoCollection: MutableList<Lotto> = mutableListOf()
+
         repeat(piece){
             val newLotto: Lotto = pickLottoNumber()
             newLottoCollection.add(newLotto)
         }
+
         return newLottoCollection
     }
 
     private fun pickLottoNumber(): Lotto {
         val newLottoNumbers = Randoms.pickUniqueNumbersInRange(MIN_LOTTO_NUMBER, MAX_LOTTO_NUMBER, LOTTO_NUMBER_SIZE)
+
         return Lotto(newLottoNumbers)
     }
 }

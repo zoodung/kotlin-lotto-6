@@ -18,7 +18,6 @@ object Constants  {
     const val MATCHED_FOUR = 4
     const val MATCHED_THREE = 3
 
-
     /* Winning */
     val INITIALIZE_WINNING_NUMBER = listOf(1, 2, 3, 4, 5, 6)
     const val INITIALIZE_BONUS_NUMBER = 7
@@ -28,6 +27,14 @@ object Constants  {
     const val INITIALIZE_NUMBER = 0
     const val MAX_PURCHASE_PIECE = 100
 
+    /* Statistic */
+    private const val MATCH_AMOUNT = "%d개"
+    const val FIRST_PLACE_ANNOUNCE = "6개 일치 (2,000,000,000원) - $MATCH_AMOUNT"
+    const val SECOND_PLACE_ANNOUNCE = "5개 일치, 보너스 볼 일치 (30,000,000원) - $MATCH_AMOUNT"
+    const val THIRD_PLACE_ANNOUNCE = "5개 일치 (1,500,000원) - $MATCH_AMOUNT"
+    const val FOURTH_PLACE_ANNOUNCE = "4개 일치 (50,000원) - $MATCH_AMOUNT"
+    const val FIFTH_PLACE_ANNOUNCE = "3개 일치 (5,000원) - $MATCH_AMOUNT"
+
     /* Input Message */
     const val REQUEST_PAY_INPUT_MESSAGE = "구입금액을 입력해 주세요."
     const val REQUEST_WINNING_NUMBER_INPUT_MESSAGE = "당첨 번호를 입력해 주세요."
@@ -36,6 +43,8 @@ object Constants  {
     /* Output Message */
     const val PRINT_ENTER = "\n"
     const val PRINT_PRODUCE_LOTTO_RESULT_MESSAGE = "개를 구매했습니다."
+    const val WINNING_STATS_MESSAGE = "당첨 통계"
+    const val PRINT_LINE_HYPHEN = "---"
 
     /* Error Message */
     private const val ERROR_TEXT = "[ERROR] "
@@ -44,7 +53,6 @@ object Constants  {
     const val ERROR_INPUT_RANGE = ERROR_TEXT + "번호가 범위를 벗어났습니다."
     const val ERROR_INPUT_BLANK = ERROR_TEXT + "공백은 입력할 수 없습니다."
     const val ERROR_INPUT_CHAR = ERROR_TEXT + "문자는 입력할 수 없습니다."
-    const val ERROR_INPUT_LIST = ERROR_TEXT + "번호 1개만 입력해 주세요."
     const val ERROR_PAY_INPUT_UNIT = ERROR_TEXT + "1000원 단위로 입력해 주세요."
     const val ERROR_PAY_INPUT_MINIMUM = ERROR_TEXT + "최소 구입 금액은 1000 입니다."
     const val ERROR_PAY_INPUT_MAXIMUM = ERROR_TEXT + "최대 구입 금액은 100000 입니다."

@@ -28,7 +28,7 @@ class Customer(
     }
 
     fun getLottoCollection(): List<Lotto> {
-        return lottoCollection
+        return lottoCollection.toList()
     }
 }
 

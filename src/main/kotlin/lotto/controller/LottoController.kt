@@ -13,6 +13,7 @@ import lotto.utils.Validate.validateWinningNumber
 import lotto.view.InputView.printBonusNumberInputMessage
 import lotto.view.InputView.printPayInputMessage
 import lotto.view.InputView.printWinningNumberInputMessage
+import lotto.view.OutPutView.printLottoRankResult
 import lotto.view.OutPutView.printProduceLottoResult
 
 
@@ -28,7 +29,8 @@ class LottoController {
         printLotto()
         inputWinningNumbers()
         inputBonusNumber()
-        ranksLotto()
+        rankLotto()
+        printLottoRanking()
     }
 
     private fun inputCustomerPay() {
@@ -63,7 +65,12 @@ class LottoController {
         winning.setBonusNumber(newBonusNumber.toInt())
     }
 
-    private fun ranksLotto() {
-        rank.analyzeLottoRanking(customer.getLottoCollection(), winning)
+    private fun rankLotto() {
+        val rankCount = rank.analyzeLottoRanking(customer.getLottoCollection(), winning)
+        rank.setRankCount(rankCount)
+    }
+
+    private fun printLottoRanking() {
+        printLottoRankResult(rank.getRankCount())
     }
 }

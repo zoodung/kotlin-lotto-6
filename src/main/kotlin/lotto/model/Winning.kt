@@ -10,7 +10,7 @@ import lotto.utils.Constants.MAX_LOTTO_NUMBER
 import lotto.utils.Constants.MIN_LOTTO_NUMBER
 
 class Winning(
-    private var  winningNumbers: List<Int> = INITIALIZE_WINNING_NUMBER,
+    private var winningNumbers: List<Int> = INITIALIZE_WINNING_NUMBER,
     private var bonusNumber: Int = INITIALIZE_BONUS_NUMBER
 ) {
     init {
