@@ -24,7 +24,7 @@ class LottoController {
         inputCustomerPay()
         produceLotto()
         printLotto()
-        inputWinningNumber()
+        inputWinningNumbers()
         inputBonusNumber()
     }
 
@@ -46,18 +46,17 @@ class LottoController {
         printProduceLottoResult(produceLottoResult)
     }
 
-    private fun inputWinningNumber(){
+    private fun inputWinningNumbers(){
         printWinningNumberInputMessage()
-        val newWinningNumber = Console.readLine()
-        validateWinningNumber(newWinningNumber)
-        winning.setWinningNumber(newWinningNumber.split(",").map { it.trim().toInt() })
+        val newWinningNumbers = Console.readLine()
+        validateWinningNumber(newWinningNumbers)
+        winning.setWinningNumbers(newWinningNumbers.split(",").map { it.trim().toInt() })
     }
 
     private fun inputBonusNumber(){
         printBonusNumberInputMessage()
         val newBonusNumber = Console.readLine()
-        val winningNumber = winning.getWinningNumber()
-        validateBonusNumber(newBonusNumber, winningNumber)
+        validateBonusNumber(newBonusNumber)
         winning.setBonusNumber(newBonusNumber.toInt())
     }
 }

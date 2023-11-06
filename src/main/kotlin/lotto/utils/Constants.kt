@@ -11,6 +11,10 @@ object Constants  {
     const val INITIALIZE_NUMBER = 0
     const val MAX_PURCHASE_PIECE = 100
 
+    /* Winning */
+    val INITIALIZE_WINNING_NUMBER = listOf(1, 2, 3, 4, 5, 6)
+    const val INITIALIZE_BONUS_NUMBER = 7
+
     /* Input Message */
     const val REQUEST_PAY_INPUT_MESSAGE = "구입금액을 입력해 주세요."
     const val REQUEST_WINNING_NUMBER_INPUT_MESSAGE = "당첨 번호를 입력해 주세요."
