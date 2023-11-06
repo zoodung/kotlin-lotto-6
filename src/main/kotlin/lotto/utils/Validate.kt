@@ -75,4 +75,6 @@ object Validate {
     private fun requireWinningNumbersRange(splitWinningNumbers: List<String>) {
         require(splitWinningNumbers.all { it.toInt() in MIN_LOTTO_NUMBER..MAX_LOTTO_NUMBER }) { ERROR_INPUT_RANGE }
     }
+
+    /*  */
 }
