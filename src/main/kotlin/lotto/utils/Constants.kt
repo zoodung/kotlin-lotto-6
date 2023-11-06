@@ -27,7 +27,8 @@ object Constants  {
     const val ERROR_INPUT_RANGE = ERROR_TEXT + "번호가 범위를 벗어났습니다."
     const val ERROR_INPUT_BLANK = ERROR_TEXT + "공백은 입력할 수 없습니다."
     const val ERROR_INPUT_CHAR = ERROR_TEXT + "문자는 입력할 수 없습니다."
-    const val ERROR_PAY_INPUT_UNIT = ERROR_TEXT + "1000원 단위로 입력 하세요."
+    const val ERROR_INPUT_LIST = ERROR_TEXT + "번호 1개만 입력해 주세요."
+    const val ERROR_PAY_INPUT_UNIT = ERROR_TEXT + "1000원 단위로 입력해 주세요."
     const val ERROR_PAY_INPUT_MINIMUM = ERROR_TEXT + "최소 구입 금액은 1000 입니다."
     const val ERROR_PAY_INPUT_MAXIMUM = ERROR_TEXT + "최대 구입 금액은 100000 입니다."
 }

@@ -56,7 +56,8 @@ class LottoController {
     private fun inputBonusNumber(){
         printBonusNumberInputMessage()
         val newBonusNumber = Console.readLine()
-        //validateBonusNumber(newBonusNumber)
+        val winningNumber = winning.getWinningNumber()
+        validateBonusNumber(newBonusNumber, winningNumber)
         winning.setBonusNumber(newBonusNumber.toInt())
     }
 }

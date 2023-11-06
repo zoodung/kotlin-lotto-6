@@ -11,4 +11,8 @@ class Winning(private var winningNumber: List<Int> = listOf(), private var bonus
         this.bonusNumber = newBonusNumber
     }
 
+    fun getWinningNumber(): List<Int> {
+        return winningNumber
+    }
+
 }

@@ -3,6 +3,7 @@ package lotto.utils
 import lotto.utils.Constants.ERROR_INPUT_BLANK
 import lotto.utils.Constants.ERROR_INPUT_CHAR
 import lotto.utils.Constants.ERROR_INPUT_DUPLICATE
+import lotto.utils.Constants.ERROR_INPUT_LIST
 import lotto.utils.Constants.ERROR_INPUT_RANGE
 import lotto.utils.Constants.ERROR_INPUT_SIZE
 import lotto.utils.Constants.ERROR_PAY_INPUT_MAXIMUM
@@ -76,5 +77,28 @@ object Validate {
         require(splitWinningNumbers.all { it.toInt() in MIN_LOTTO_NUMBER..MAX_LOTTO_NUMBER }) { ERROR_INPUT_RANGE }
     }
 
-    /*  */
+    /* 보너스 번호 입력 예외 처리 */
+    fun validateBonusNumber(newBonusNumber: String, winningNumber: List<Int>) {
+        requireBonusNumberNotBlank(newBonusNumber)
+        requireBonusNumberOnlyDigits(newBonusNumber)
+        val alterBonusNumber = newBonusNumber.toInt()
+        requireBonusNumberRange(alterBonusNumber)
+        requireBonusNumberDuplicate(alterBonusNumber, winningNumber)
+    }
+
+    private fun requireBonusNumberNotBlank(newBonusNumber: String) {
+        require(newBonusNumber.isNotBlank()) { ERROR_INPUT_BLANK }
+    }
+
+    private fun requireBonusNumberOnlyDigits(newBonusNumber: String) {
+        require(newBonusNumber.toIntOrNull() != null) { ERROR_INPUT_CHAR }
+    }
+
+    private fun requireBonusNumberRange(alterBonusNumber: Int){
+        require(alterBonusNumber in MIN_LOTTO_NUMBER..MAX_LOTTO_NUMBER) { ERROR_INPUT_RANGE }
+    }
+
+    private fun requireBonusNumberDuplicate(alterBonusNumber: Int, winningNumber:List<Int>){
+        require(alterBonusNumber !in winningNumber) { ERROR_INPUT_DUPLICATE }
+    }
 }
