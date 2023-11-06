@@ -23,12 +23,8 @@ class Customer(
         this.lottoCollection = newLottoCollection
     }
 
-    fun getPay(): Int {
-        return pay
-    }
+    fun getPay(): Int = pay
 
-    fun getLottoCollection(): List<Lotto> {
-        return lottoCollection.toList()
-    }
+    fun getLottoCollection(): List<Lotto> = lottoCollection.toList()
 }
 

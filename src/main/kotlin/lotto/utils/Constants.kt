@@ -55,6 +55,8 @@ object Constants  {
     const val PRINT_PRODUCE_LOTTO_RESULT_MESSAGE = "개를 구매했습니다."
     const val WINNING_STATS_MESSAGE = "당첨 통계"
     const val PRINT_LINE_HYPHEN = "---"
+    const val PRINT_PROFIT_MESSAGE_FRONT = "총 수익률은 %.1f"
+    const val PRINT_PROFIT_MESSAGE_BACK = "%입니다."
 
     /* Error Message */
     private const val ERROR_TEXT = "[ERROR] "

@@ -16,6 +16,7 @@ import lotto.view.InputView.printPayInputMessage
 import lotto.view.InputView.printWinningNumberInputMessage
 import lotto.view.OutPutView.printLottoRankResult
 import lotto.view.OutPutView.printProduceLottoResult
+import lotto.view.OutPutView.printProfitResult
 import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.MethodDescriptor.getter
 
 
@@ -35,6 +36,7 @@ class LottoController {
         rankLotto()
         printLottoRanking()
         calculateProfit()
+        printProfit()
     }
 
     private fun inputCustomerPay() {
@@ -80,6 +82,9 @@ class LottoController {
 
     private fun calculateProfit() {
         profit.calculateLottoProfit(rank.getRankCount(), customer.getPay())
-        println(profit.getProfit())
+    }
+
+    private fun printProfit() {
+        printProfitResult(profit.getProfit())
     }
 }

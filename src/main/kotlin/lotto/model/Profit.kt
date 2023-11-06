@@ -16,9 +16,8 @@ class Profit(private var _profit: Double = INITIALIZE_DOUBLE) {
 
     fun calculateLottoProfit(rankCount: List<Int>, pay: Int) {
         val totalPrizeMoney = countProfit(rankCount)
-        val netProfit = totalPrizeMoney - pay
 
-        setProfit(netProfit.toDouble() / (pay * 100))
+        setProfit((totalPrizeMoney.toDouble() / pay)*100)
     }
 
     private fun countProfit(rankCount: List<Int>): Int {

@@ -17,6 +17,6 @@ class ProfitTest {
     fun `수익률을 정확하게 계산한다`() {
         profit.calculateLottoProfit(listOf(1, 0, 0, 0, 0), 5000)
 
-        Assertions.assertTrue(profit.getProfit() == 0.0)
+        Assertions.assertTrue(profit.getProfit() == 100.0)
     }
 }

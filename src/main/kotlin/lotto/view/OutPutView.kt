@@ -4,6 +4,8 @@ import lotto.model.Lotto
 import lotto.utils.Constants.PRINT_ENTER
 import lotto.utils.Constants.PRINT_LINE_HYPHEN
 import lotto.utils.Constants.PRINT_PRODUCE_LOTTO_RESULT_MESSAGE
+import lotto.utils.Constants.PRINT_PROFIT_MESSAGE_BACK
+import lotto.utils.Constants.PRINT_PROFIT_MESSAGE_FRONT
 import lotto.utils.Constants.WINNING_STATS_MESSAGE
 import lotto.utils.Statistic
 
@@ -30,5 +32,9 @@ object OutPutView {
         for (i in ranking.indices) {
             println(placeMessages[i].announceMessage.format(ranking[i]))
         }
+    }
+
+    fun printProfitResult(profitValue: Double) {
+        println(PRINT_PROFIT_MESSAGE_FRONT.format(profitValue) + PRINT_PROFIT_MESSAGE_BACK)
     }
 }
