@@ -38,4 +38,14 @@ class RankTest {
 
         Assertions.assertTrue(rank.getRank() == listOf(FIRST_PLACE, SECOND_PLACE, THIRD_PLACE, FOURTH_PLACE, FIFTH_PLACE))
     }
+
+    @Test
+    fun `로또 당첨 개수가 정확한지 확인한다`() {
+        rank.analyzeLottoRanking(customer.getLottoCollection(), winning)
+
+        val rankingCountResult = rank.rankingCount(rank.getRank())
+        println(rankingCountResult)
+
+        Assertions.assertTrue(rankingCountResult == listOf(1, 1, 1, 1, 1))
+    }
 }

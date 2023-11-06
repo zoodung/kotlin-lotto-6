@@ -2,7 +2,10 @@ package lotto.model
 
 import lotto.utils.Constants.FIFTH_PLACE
 import lotto.utils.Constants.FIRST_PLACE
+import lotto.utils.Constants.FIRST_RANK
 import lotto.utils.Constants.FOURTH_PLACE
+import lotto.utils.Constants.INITIALIZE_NUMBER
+import lotto.utils.Constants.LAST_RANK
 import lotto.utils.Constants.LOSE_PLACE
 import lotto.utils.Constants.MATCHED_FIVE
 import lotto.utils.Constants.MATCHED_FOUR
@@ -12,24 +15,20 @@ import lotto.utils.Constants.SECOND_PLACE
 import lotto.utils.Constants.THIRD_PLACE
 
 class Rank(
-    private var _rank: List<String> = listOf(),
-    private var rankCount: List<Int> = listOf()
+    private var _rank: List<String> = emptyList(),
+    private var rankCount: List<Int> = emptyList()
 ) {
     private fun setRank(rank: List<String>) {
         this._rank = rank
-    }
-
-    fun getRank(): List<String> {
-        return _rank.toList()
     }
 
     fun setRankCount(rankCount: List<Int>) {
         this.rankCount = rankCount
     }
 
-    fun getRankCount(): List<Int> {
-        return rankCount.toList()
-    }
+    fun getRank(): List<String> = _rank.toList()
+
+    fun getRankCount(): List<Int> = rankCount.toList()
 
     fun analyzeLottoRanking(lottoCollection: List<Lotto>, winning: Winning): List<Int> {
         val winningNumbers = winning.getWinningNumbers().toSet()
@@ -68,24 +67,17 @@ class Rank(
         return THIRD_PLACE
     }
 
-    private fun rankingCount(ranking: List<String>): List<Int> {
-        val countMap = mutableMapOf<String, Int>().withDefault { 0 }
+    fun rankingCount(ranking: List<String>): List<Int> {
+        val countMap = mutableMapOf<String, Int>().withDefault { INITIALIZE_NUMBER }
 
         ranking.forEach { rank ->
-            countMap[rank] = countMap.getValue(rank) + 1
+            countMap[rank] = countMap.getValue(rank) + FIRST_RANK
         }
 
         return rankingPlaceCount(countMap)
     }
 
     private fun rankingPlaceCount(countMap: MutableMap<String, Int>): List<Int> {
-        val rankingMatchCount: MutableList<Int> = mutableListOf()
-
-        for (i in 1..5) {
-            val rank = "${i}등"
-            rankingMatchCount.add(countMap.getValue(rank))
-        }
-
-        return rankingMatchCount
+        return (FIRST_RANK..LAST_RANK).map { i -> countMap["${i}등"] ?: INITIALIZE_NUMBER }.reversed()
     }
 }

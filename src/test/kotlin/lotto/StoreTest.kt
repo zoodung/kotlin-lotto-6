@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class StoreTest {
-    lateinit var store: Store
+    private lateinit var store: Store
 
     @BeforeEach
     fun setUp() {

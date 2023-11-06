@@ -29,11 +29,7 @@ class Winning(
         this.bonusNumber = newBonusNumber
     }
 
-    fun getWinningNumbers(): List<Int> {
-        return winningNumbers
-    }
+    fun getWinningNumbers(): List<Int> = winningNumbers.toList()
 
-    fun getBonusNumber(): Int {
-        return bonusNumber
-    }
+    fun getBonusNumber(): Int = bonusNumber
 }

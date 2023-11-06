@@ -17,10 +17,20 @@ object Constants  {
     const val MATCHED_FIVE = 5
     const val MATCHED_FOUR = 4
     const val MATCHED_THREE = 3
+    const val FIRST_RANK = 1
+    const val LAST_RANK = 5
 
     /* Winning */
     val INITIALIZE_WINNING_NUMBER = listOf(1, 2, 3, 4, 5, 6)
     const val INITIALIZE_BONUS_NUMBER = 7
+
+    /* Profit */
+    const val FIFTH_PRIZE_MONEY = 5000
+    const val FOURTH_PRIZE_MONEY = 50000
+    const val THIRD_PRIZE_MONEY = 1500000
+    const val SECOND_PRIZE_MONEY = 30000000
+    const val FIRST_PRIZE_MONEY = 2000000000
+    const val INITIALIZE_DOUBLE = 0.0
 
     /* Validate */
     const val LOTTO_PURCHASE_UNIT = 1000

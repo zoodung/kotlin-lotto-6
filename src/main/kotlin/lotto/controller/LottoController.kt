@@ -3,6 +3,7 @@ package lotto.controller
 import camp.nextstep.edu.missionutils.Console
 import lotto.model.Customer
 import lotto.model.Lotto
+import lotto.model.Profit
 import lotto.model.Rank
 import lotto.model.Store
 import lotto.model.Winning
@@ -15,6 +16,7 @@ import lotto.view.InputView.printPayInputMessage
 import lotto.view.InputView.printWinningNumberInputMessage
 import lotto.view.OutPutView.printLottoRankResult
 import lotto.view.OutPutView.printProduceLottoResult
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.MethodDescriptor.getter
 
 
 class LottoController {
@@ -22,6 +24,7 @@ class LottoController {
     private val store: Store = Store()
     private val winning: Winning = Winning()
     private val rank: Rank = Rank()
+    private val profit: Profit = Profit()
 
     fun run() {
         inputCustomerPay()
@@ -31,6 +34,7 @@ class LottoController {
         inputBonusNumber()
         rankLotto()
         printLottoRanking()
+        calculateProfit()
     }
 
     private fun inputCustomerPay() {
@@ -72,5 +76,10 @@ class LottoController {
 
     private fun printLottoRanking() {
         printLottoRankResult(rank.getRankCount())
+    }
+
+    private fun calculateProfit() {
+        profit.calculateLottoProfit(rank.getRankCount(), customer.getPay())
+        println(profit.getProfit())
     }
 }
