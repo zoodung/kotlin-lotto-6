@@ -21,13 +21,15 @@ class RankTest {
 
     @BeforeEach
     fun setUp() {
-        customer = Customer(5000, mutableListOf(
-            Lotto(listOf(1, 2, 3, 4, 5, 6)),
-            Lotto(listOf(1, 2, 3, 4, 5, 45)),
-            Lotto(listOf(1, 2, 3, 4, 5, 7)),
-            Lotto(listOf(1, 2, 3, 4, 7, 8)),
-            Lotto(listOf(1, 2, 3, 7, 8, 9)),
-            ))
+        customer = Customer(
+            5000, mutableListOf(
+                Lotto(listOf(1, 2, 3, 4, 5, 6)),
+                Lotto(listOf(1, 2, 3, 4, 5, 45)),
+                Lotto(listOf(1, 2, 3, 4, 5, 7)),
+                Lotto(listOf(1, 2, 3, 4, 7, 8)),
+                Lotto(listOf(1, 2, 3, 7, 8, 9)),
+            )
+        )
         winning = Winning(listOf(1, 2, 3, 4, 5, 6), 45)
         rank = Rank()
     }
@@ -36,7 +38,15 @@ class RankTest {
     fun `로또 숫자와 당첨 숫자를 비교해 등수를 분석한다`() {
         rank.analyzeLottoRanking(customer.getLottoCollection(), winning)
 
-        Assertions.assertTrue(rank.getRank() == listOf(FIRST_PLACE, SECOND_PLACE, THIRD_PLACE, FOURTH_PLACE, FIFTH_PLACE))
+        Assertions.assertTrue(
+            rank.getRank() == listOf(
+                FIRST_PLACE,
+                SECOND_PLACE,
+                THIRD_PLACE,
+                FOURTH_PLACE,
+                FIFTH_PLACE
+            )
+        )
     }
 
     @Test

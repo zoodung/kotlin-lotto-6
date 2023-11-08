@@ -43,7 +43,8 @@ class LottoController {
         while (true) {
             printPayInputMessage()
             try {
-                val payment = Console.readLine().toIntOrNull() ?: throw IllegalArgumentException(ERROR_INPUT_BLANK_OR_CHAR)
+                val payment =
+                    Console.readLine().toIntOrNull() ?: throw IllegalArgumentException(ERROR_INPUT_BLANK_OR_CHAR)
                 validatePay(payment)
                 customer.setPay(payment)
                 break
@@ -82,7 +83,8 @@ class LottoController {
         while (true) {
             printBonusNumberInputMessage()
             try {
-                val newBonusNumber = Console.readLine().toIntOrNull() ?: throw IllegalArgumentException(ERROR_INPUT_BLANK_OR_CHAR)
+                val newBonusNumber =
+                    Console.readLine().toIntOrNull() ?: throw IllegalArgumentException(ERROR_INPUT_BLANK_OR_CHAR)
                 validateBonusNumber(newBonusNumber, winning.getWinningNumbers())
                 winning.setBonusNumber(newBonusNumber)
                 break

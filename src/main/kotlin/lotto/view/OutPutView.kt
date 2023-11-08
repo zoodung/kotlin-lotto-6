@@ -20,7 +20,7 @@ object OutPutView {
         printLottoWinningStatistic(rankCount)
     }
 
-    private fun printLottoWinningStatistic(ranking: List<Int>){
+    private fun printLottoWinningStatistic(ranking: List<Int>) {
         val placeMessages = listOf(
             Statistic.FIFTH_PLACE_MESSAGE,
             Statistic.FOURTH_PLACE_MESSAGE,

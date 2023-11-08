@@ -9,7 +9,7 @@ class Store {
     fun produceLottoNumber(piece: Int): MutableList<Lotto> {
         val newLottoCollection: MutableList<Lotto> = mutableListOf()
 
-        repeat(piece){
+        repeat(piece) {
             val newLotto: Lotto = pickLottoNumber()
             newLottoCollection.add(newLotto)
         }

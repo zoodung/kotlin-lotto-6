@@ -6,7 +6,8 @@ import lotto.utils.Constants.LOTTO_PURCHASE_UNIT
 
 
 class Customer(
-    private var pay: Int = INITIALIZE_NUMBER, private var lottoCollection: MutableList<Lotto> = mutableListOf()
+    private var pay: Int = INITIALIZE_NUMBER,
+    private var lottoCollection: MutableList<Lotto> = mutableListOf()
 ) {
     fun setPay(payment: Int) {
         this.pay = payment

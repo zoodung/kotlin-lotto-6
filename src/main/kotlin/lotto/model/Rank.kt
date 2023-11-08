@@ -36,7 +36,6 @@ class Rank(
 
         for (lotto in lottoCollection) {
             ranking.add(recordRank(lotto.getNumbers(), winningNumbers, winning.getBonusNumber()))
-
         }
 
         setRank(ranking)
