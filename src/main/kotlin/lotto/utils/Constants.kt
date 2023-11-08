@@ -57,13 +57,13 @@ object Constants {
 
     /* Error Message */
     private const val ERROR_TEXT = "[ERROR] "
-    const val ERROR_INPUT_SIZE = ERROR_TEXT + "번호가 6개가 아닙니다."
+    const val ERROR_INPUT_SIZE = ERROR_TEXT + "로또 번호가 6개여야 합니다."
     const val ERROR_INPUT_DUPLICATE = ERROR_TEXT + "중복하는 숫자가 존재합니다."
-    const val ERROR_INPUT_RANGE = ERROR_TEXT + "번호가 범위를 벗어났습니다."
+    const val ERROR_INPUT_RANGE = ERROR_TEXT + "로또 번호는 1부터 45 사이의 숫자여야 합니다."
     const val ERROR_INPUT_BLANK_OR_CHAR = ERROR_TEXT + "문자와 공백은 입력할 수 없습니다."
     const val ERROR_INPUT_BLANK = ERROR_TEXT + "공백은 입력할 수 없습니다."
     const val ERROR_INPUT_CHAR = ERROR_TEXT + "문자는 입력할 수 없습니다."
-    const val ERROR_PAY_INPUT_UNIT = ERROR_TEXT + "1000원 단위로 입력해 주세요."
+    const val ERROR_PAY_INPUT_UNIT = ERROR_TEXT + "구입 금액은 1000 단위여야 합니다."
     const val ERROR_PAY_INPUT_MINIMUM = ERROR_TEXT + "최소 구입 금액은 1000 입니다."
     const val ERROR_PAY_INPUT_MAXIMUM = ERROR_TEXT + "최대 구입 금액은 100000 입니다."
 }
